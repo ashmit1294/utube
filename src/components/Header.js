@@ -15,7 +15,7 @@ function Header() {
       <a href="/" ><img className='h-6 mt-1' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdB5idttrtpfZkhv3Dz20jvA14SXgOCOKQiBT6_tnEyagCBi91sEJMTU8X6eLxzb5dQ&usqp=CAU" alt="youtube_logo"  /></a>
     </div>
     <div className='col-span-10 text-center'>
-    <input className='w-1/2 border border-gray-400 rounded-l-full h-9' type="text" placeholder='search' />
+    <input className='w-1/2 border border-gray-400 rounded-l-full h-9 px-5' type="text" placeholder='Search' />
     <button className='border border-gray-400  rounded-r-full px-5 bg-gray-200 h-9'>
       Search{/* <img className='w-3/4 h-6' src={logo} alt="magnify_icon"  /> */}
       </button>
