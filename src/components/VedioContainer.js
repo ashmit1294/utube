@@ -17,10 +17,10 @@ const  getVedios=async()=>{
 }
 
   return (
-    <div>
-      {vedios.map((obj)=>{
-          <Vediocard inf0={obj} />
-      })}
+    <div className='row flex mx-2'>
+      {vedios.map((obj)=>
+      <Vediocard info={obj} />
+      )}
     
     </div>
   )
