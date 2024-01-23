@@ -6,8 +6,8 @@ import {useSelector} from 'react-redux'
     const isDark=useSelector(store=>store.theme.isDark);
     return (
       <div className={`${
-        isDark ? 'bg-gray-600 text-white' : 'bg-gray-100 text-black'
-      }`}>
+        isDark ? 'bg-black text-white' : 'bg-white text-black'
+      } bg-blend-luminosity`}>
       <Header />
       <Body />
       </div>

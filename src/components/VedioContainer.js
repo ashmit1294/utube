@@ -21,6 +21,12 @@ const  getVedios=async()=>{
       {vedios.map((obj)=>
       <Vediocard info={obj} />
       )}
+      {vedios.map((obj)=>
+      <Vediocard info={obj} />
+      )}
+      {vedios.map((obj)=>
+      <Vediocard info={obj} />
+      )}
     
     </div>
   )
