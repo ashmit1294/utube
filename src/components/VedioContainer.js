@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { YOUTUBE_LIKED_API, YOUTUBE_VEDIO_API } from '../utils/constants';
 import Vediocard from './Vediocard';
+import { Link } from 'react-router-dom';
 
 const VedioContainer = () => {
 
@@ -21,7 +22,7 @@ const  getVedios=async()=>{
   return (
     <div className='row flex mx-2 my-2 flex-wrap'>
       {vedios.map((vedio)=>
-      <Vediocard info={vedio} key={vedio.id}/>
+      <Link to={"/watch?v="+vedio.id} key={vedio.id}><Vediocard info={vedio} key={vedio.id}/></Link>
       )}
     
     </div>
