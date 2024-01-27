@@ -7,7 +7,7 @@ const ButtonList = () => {
 
   return (
     <div className='flex flex-wrap'>
-      {list.map((val,i)=>
+      {list?.map((val,i)=>
           <Button name={val} key={i} />
       )}  
     </div>

@@ -16,12 +16,12 @@ const  getVedios=async()=>{
   const data2=await  fetch(YOUTUBE_LIKED_API);
   const json2=await data2.json();
   const json= await data.json();
-  setVedios([...json.items,...json2.items]); 
+  setVedios([...json?.items,...json2?.items]); 
 }
 
   return (
     <div className='row flex mx-2 my-2 flex-wrap'>
-      {vedios.map((vedio)=>
+      {vedios?.map((vedio)=>
       <Link to={"/watch?v="+vedio.id} key={vedio.id}><Vediocard info={vedio} key={vedio.id}/></Link>
       )}
     
