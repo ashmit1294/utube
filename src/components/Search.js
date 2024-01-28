@@ -14,7 +14,7 @@ const Search = () => {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => getSearchSuggestions(), 1000);
+    const timer = setTimeout(() => getSearchSuggestions(), 200);
 
     const getSearchSuggestions = async () => {
       const response = await fetch(YOUTUBE_SEARCH_API + searchQuery);
@@ -32,7 +32,7 @@ const Search = () => {
   // console.log(data[0]?.id.videoId)
 
   return (
-    <div className='col-span-10 text-center'>
+    <div className='relative col-span-10 text-center'>
       <div>
         <input
           className='w-1/2 border border-gray-400 rounded-l-full h-9 px-5 ml-4'
@@ -46,7 +46,7 @@ const Search = () => {
         <button className='border border-gray-400 rounded-r-full px-3 bg-gray-200 h-9'>🔎</button>
       </div>
       {suggestionBox ? (
-        <div className='py-2 px-5 w-[34rem] shadow-lg rounded-lg bg-white text-left fixed ml-[16rem]'>
+        <div className='py-2 px-5 w-[34rem] shadow-lg rounded-lg bg-white text-left absolute ml-[16rem]'>
           <ul>
             {data?.map((obj,i) => (
               <li key={i}>{obj.snippet.title}</li>
