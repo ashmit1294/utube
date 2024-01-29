@@ -8,7 +8,7 @@ function Sidebar() {
   // if(!isMenuOpen) return null;
 
   return !isMenuOpen?null:(
-    <div className='p-5 shadow-lg w-60' >
+    <div className='p-5 shadow-lg' >
       <ul>
         <li><Link to="/">Home</Link></li>
         <li>Sports</li>

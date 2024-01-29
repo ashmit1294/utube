@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { YOUTUBE_SEARCH_API } from '../utils/constants';
+import Suggestionbox from './Suggestionbox';
+// import searchIcon from '../assets/searchIcon.svg'
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -46,13 +48,7 @@ const Search = () => {
         <button className='border border-gray-400 rounded-r-full px-3 bg-gray-200 h-9'>🔎</button>
       </div>
       {suggestionBox ? (
-        <div className='py-2 px-5 w-[34rem] shadow-lg rounded-lg bg-white text-left absolute ml-[16rem]'>
-          <ul>
-            {data?.map((obj,i) => (
-              <li key={i}>{obj.snippet.title}</li>
-            ))}
-          </ul>
-        </div>
+      <Suggestionbox data={data}/>
       ) : null}
     </div>
   );
