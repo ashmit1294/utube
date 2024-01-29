@@ -12,10 +12,10 @@
     -    closes and opens through Hambergur Menu 
     -    State managed by Redux store appSlice
 # body
-    -    buttonlist
-    -    Vedio Container
+    -    # Buttonlist
+    -    # Vedio Container
         -    Vedio card component
-    -    when vedio selected routes to its watchPage
-    -    WatchPage
+    -    Selected Vedio , routes to its watchPage
+    -    # WatchPage
         - iFrame for specific vedio 
-        -
+        - 
