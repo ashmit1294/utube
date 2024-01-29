@@ -6,6 +6,8 @@
     -   Youtube text label
     -   search bar
     -   search icon 
+    -   Theme Icon 
+    -   profile icon
 # Sidebar  
 # body
     -> buttonlist
