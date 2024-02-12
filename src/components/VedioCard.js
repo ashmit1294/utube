@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Vediocard = ({info}) => {
     
@@ -13,7 +13,6 @@ const Vediocard = ({info}) => {
         <li className='m-2 '>{channelTitle}</li>
         <li className='m-2 text-xs'>{statistics.viewCount} views</li>
       </ul>
-    
     </div>
   )
 }

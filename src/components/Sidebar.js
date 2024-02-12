@@ -42,9 +42,6 @@ function Sidebar() {
         <li>Gaming</li>
         <li>Movies</li>
       </ul>
-      
-
-
     </div>
   )
 }

@@ -8,6 +8,10 @@ export const YOUTUBE_LIKED_API="https://youtube.googleapis.com/youtube/v3/videos
 
 export const YOUTUBE_SEARCH_API="https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=14&key="+GOOGLE_API_KEY+"&q="
 
+export const GOOGLE_SEARCH_API="https://suggestqueries.google.com/complete/search?output=toolbar&hl=en&q="
+
+// "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=14&key=AIzaSyDAYu6WikLQs_AreoA5i3_gWeid86WhbSw&q="
+
 
 
 
