@@ -1,37 +1,40 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { YOUTUBE_SEARCH_API } from '../utils/constants';
 import Suggestionbox from './Suggestionbox';
-// import searchIcon from '../assets/searchIcon.svg'
+import { useDispatch, useSelector } from 'react-redux';
+import { cacheResults } from '../utils/searchSlice';
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [data, setData] = useState([]);
   const [suggestionBox, setSuggestionBox] = useState(false);
   const inputRef = useRef();
-
-  const handleOutsideClick = (event) => {
-    if (inputRef.current && !inputRef.current.contains(event.target)) {
-      setSuggestionBox(false);
-    }
-  };
+  
+  const searchCache=useSelector(store=>store.search);
+  const dispatch=useDispatch();
 
   useEffect(() => {
-    const timer = setTimeout(() => getSearchSuggestions(), 200);
+    const timer = setTimeout(() => {
+      if(searchCache[searchQuery]){
+        setData(searchCache[searchQuery]);
+      }else{
+        getSearchSuggestions();
+      }
+    }, 200);
 
     const getSearchSuggestions = async () => {
       const response = await fetch(YOUTUBE_SEARCH_API + searchQuery);
       const json = await response.json();
       setData(json?.items);
+      console.log("Api Call made - "+searchQuery)
+      dispatch(cacheResults({
+        [searchQuery] : data,
+      }));
     };
-      // Attach the event listener when the component mounts.
-      document.addEventListener('click', handleOutsideClick);
     return () => {
       clearTimeout(timer);
-      document.removeEventListener('click', handleOutsideClick);
-    
     };
   }, [searchQuery]);
-  // console.log(data[0]?.id.videoId)
 
   return (
     <div className='relative col-span-10 text-center'>
@@ -42,8 +45,9 @@ const Search = () => {
           placeholder='Search'
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          onClick={() => setSuggestionBox(true)}
           ref={inputRef}
+          onBlur={()=>setSuggestionBox(false)}
+          onFocus={()=>setSuggestionBox(true)}
         />
         <button className='border border-gray-400 rounded-r-full px-3 bg-gray-200 h-9'>🔎</button>
       </div>
