@@ -6,10 +6,7 @@ const searchSlice=createSlice({
     },
     reducers:{
         cacheResults:(state,action)=>{
-            // if (state?.length >= 10) {
-            //     state.shift();
-            // }
-        Object.assign(state,action.payload)
+        Object.assign(state,action.payload);
         }
 
     },
